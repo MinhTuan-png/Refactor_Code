@@ -77,7 +77,7 @@ public class PersonalTaskManagerViolations {
                 break;
             }
         }
-        if (!isValidPriority) {
+        if (!isValidPriority(priorityLevel)) {
             System.out.println("Lỗi: Mức độ ưu tiên không hợp lệ. Vui lòng chọn từ: Thấp, Trung bình, Cao.");
             return null;
         }
