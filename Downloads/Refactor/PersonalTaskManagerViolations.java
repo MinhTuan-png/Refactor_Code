@@ -40,6 +40,11 @@ public class PersonalTaskManagerViolations {
         }
     }
 
+    // Hàm trả về timestamp hiện tại
+    private String getCurrentTimestamp() {
+        return LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME);
+    }
+
     /**
      * Chức năng thêm nhiệm vụ mới
      */
@@ -95,8 +100,8 @@ public class PersonalTaskManagerViolations {
         newTask.put("due_date", dueDate.format(DATE_FORMATTER));
         newTask.put("priority", priorityLevel);
         newTask.put("status", "Chưa hoàn thành");
-        newTask.put("created_at", LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME));
-        newTask.put("last_updated_at", LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME));
+        newTask.put("created_at", getCurrentTimestamp());
+        newTask.put("last_updated_at", getCurrentTimestamp());
         newTask.put("is_recurring", isRecurring);
         if (isRecurring) {
             newTask.put("recurrence_pattern", "Chưa xác định");
